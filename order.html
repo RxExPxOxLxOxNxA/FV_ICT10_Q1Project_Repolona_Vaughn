@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vaughn's Fast Food Place | Order</title>
+
+  <!-- pyscript + bootstrap -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
+  <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- style css -->
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body class="site-bg">
+
+  <!-- navbar -->
+  <header class="container py-3">
+    <nav class="nav-card d-flex justify-content-between align-items-center">
+      <div class="brand">
+        <span class="brand-title">Vaughn's Fast Food Place</span>
+      </div>
+      <div class="nav-buttons">
+        <a class="btn btn-outline-light btn-sm mx-1" href="index.html">Home</a>
+        <a class="btn btn-outline-light btn-sm mx-1" href="order.html">Order Now</a>
+        <a class="btn btn-outline-light btn-sm mx-1" href="contact.html">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ordering card -->
+  <main class="container mb-5">
+    <div class="order-card p-4 mx-auto">
+      <h2 class="text-center mb-4">Food Ordering System</h2>
+
+      <div class="row align-items-start g-4">
+        <div class="col-lg-6">
+          <h5 class="mb-3">Menu:</h5>
+          <div id="menuList" class="menu-list">
+            <div class="menu-item d-flex align-items-center">
+              <img src="https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_730,h_548/tk%2Fphoto%2F2025%2F06-2025%2F2025-06-burger-doneness-guide%2Fburger-doneness-guide-0195" alt="Burger icon" class="menu-icon" />
+              <label class="flex-grow-1 ms-2">
+                <input class="form-check-input me-2" type="checkbox" value="Burger" name="item" />
+                Burger
+              </label>
+              <div class="menu-price">₱199.99</div>
+            </div>
+
+            <div class="menu-item d-flex align-items-center">
+              <img src="https://www.recipetineats.com/tachyon/2014/06/Pasta1.jpg?resize=680%2C680&zoom=1" alt="Pasta icon" class="menu-icon" />
+              <label class="flex-grow-1 ms-2">
+                <input class="form-check-input me-2" type="checkbox" value="Pasta" name="item" />
+                Pasta
+              </label>
+              <div class="menu-price">₱249.50</div>
+            </div>
+
+            <div class="menu-item d-flex align-items-center">
+              <img src="https://simpleveganblog.com/wp-content/uploads/2020/04/Baked-Frech-Fries-3.jpg" alt="Fries icon" class="menu-icon" />
+              <label class="flex-grow-1 ms-2">
+                <input class="form-check-input me-2" type="checkbox" value="Fries" name="item" />
+                Fries
+              </label>
+              <div class="menu-price">₱89.00</div>
+            </div>
+
+            <div class="menu-item d-flex align-items-center">
+              <img src="https://www.seriouseats.com/thmb/sGmCdh11W1YtdHhHjosa2alkPJM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2015__05__Anova-Steak-Guide-Sous-Vide-Photos15-beauty-159b7038c56a4e7685b57f478ca3e4c8.jpg" alt="Steak icon" class="menu-icon" />
+              <label class="flex-grow-1 ms-2">
+                <input class="form-check-input me-2" type="checkbox" value="Steak" name="item" />
+                Steak
+              </label>
+              <div class="menu-price">₱599.00</div>
+            </div>
+
+            <div class="menu-item d-flex align-items-center">
+              <img src="https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/48a49653c8716457eb0b2f7eb3c7d74c/Derivates/8d83d9ed4567fa15456d8eec7557e60006a15576.jpg" alt="Pizza icon" class="menu-icon" />
+              <label class="flex-grow-1 ms-2">
+                <input class="form-check-input me-2" type="checkbox" value="Pizza" name="item" />
+                Pizza
+              </label>
+              <div class="menu-price">₱399.75</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <h5 class="mb-3">Customer Details:</h5>
+
+          <div class="mb-2">
+            <label class="form-label small text-muted">Customer Name</label>
+            <input id="name" type="text" class="form-control" placeholder="Your name" />
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label small text-muted">Address</label>
+            <input id="address" type="text" class="form-control" placeholder="Your address" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small text-muted">Contact Number</label>
+            <input id="number" type="tel" class="form-control" placeholder="0912-345-6789" />
+          </div>
+        </div>
+      </div>
+
+      <!-- confirmation box -->
+      <div class="text-center mt-4">
+        <button type="button" class="btn btn-cta btn-lg" py-click="create_order">Create Order</button>
+      </div>
+
+      <!-- output -->
+      <div id="output" class="order-output mt-4"></div>
+    </div>
+  </main>
+
+    <!-- pyscript src for ordering form -->
+  <py-script src="main_order.py"></py-script>
+</body>
+</html>
