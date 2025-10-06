@@ -32,7 +32,7 @@ def create_order(event):
         return
 
     if not number.isdigit() or len(number) < 11: # 11 because philippines is 11 digits long including the 0 at the start
-        display("Please enter a valid phone number (at least 11 digits).", target="output") # line 34-36 specifically len was from coipilot same problem had a hard time making sure that the phone number was only numbers and not anything else
+        display("Please enter a valid phone number (at least 11 digits).", target="output") # line 34-36 specifically isdigit was from coipilot same problem had a hard time making sure that the phone number was only numbers and not anything else
         return
 
     # total price calculation code
@@ -57,4 +57,5 @@ def create_order(event):
     """
 
     display(summary, target="output")
+
 
