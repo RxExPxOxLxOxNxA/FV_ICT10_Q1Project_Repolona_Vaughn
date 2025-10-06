@@ -27,12 +27,12 @@ def create_order(event):
     number = document.getElementById("number").value  
 
     # checks that all fields are filled and number format looks valid
-    if not name.strip() or not address.strip() or not number.strip(): # .strip codes are from copilot had a hard time making sure the user input was truly filled in asked copilot for help and gave this code 
+    if not name.strip() or not address.strip() or not number.strip():
         display("⚠️ Please fill in all customer details.", target="output")
         return
 
     if not number.isdigit() or len(number) < 11: # 11 because philippines is 11 digits long including the 0 at the start
-        display("Please enter a valid phone number (at least 11 digits).", target="output") # line 34-36 this as well from coipilot same problem had a hard time making sure that the phone number was only numbers and not anything else
+        display("Please enter a valid phone number (at least 11 digits).", target="output") # line 34-36 specifically len was from coipilot same problem had a hard time making sure that the phone number was only numbers and not anything else
         return
 
     # total price calculation code
@@ -57,3 +57,4 @@ def create_order(event):
     """
 
     display(summary, target="output")
+
